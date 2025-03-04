@@ -1,0 +1,128 @@
+#:kivy 2.1.0
+#:import dp kivy.metrics.dp
+#:import MDTextField kivymd.uix.textfield.MDTextField
+
+<MainControl>:
+    orientation: "vertical"
+    spacing: dp(10)
+    padding: [dp(10), dp(10), dp(10), dp(10)]
+    canvas.before:
+        Color:
+            rgba: 0.95, 0.95, 0.95, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    # IP Panel (nằm ở trên cùng)
+    BoxLayout:
+        size_hint_y: None
+        height: dp(60)
+        spacing: dp(5)
+        padding: [dp(10), dp(10), dp(10), dp(10)]
+        MDTextField:
+            id: ip_input
+            hint_text: "Enter ESP32 IP"
+            mode: "round"
+            max_text_length: 15
+            helper_text: "IP must be valid"
+            normal_color: 0.2, 0.2, 0.2, 1
+            line_color_focus: 0, 0.5, 0.8, 1
+            text_color: 1, 1, 1, 1
+            hint_text_color: 1, 1, 1, 0.5
+            cursor_color: 1, 1, 1, 1
+            font_size: dp(16)
+            size_hint_x: None
+            width: dp(200)
+            height: dp(40)
+        RoundedButton:
+            text: "Set IP"
+            size_hint_x: None
+            width: dp(50)
+            height: dp(50)
+            font_size: dp(16)
+            on_release: root.set_ip()
+        Spinner:
+            id: ip_spinner
+            text: "Saved IPs"
+            size_hint_x: None
+            width: dp(120)
+            font_size: dp(16)
+            on_text: root.on_spinner_select(self, self.text)
+    
+    # Nút toggle điều khiển servo
+    AnchorLayout:
+        size_hint_y: None
+		anchor_x: "right"
+		height: dp(-15)
+		padding: [0, 0, dp(20), 0]
+        ToggleButton:
+            id: servo_toggle
+            background_normal:"icon/open.png"
+			background_down:"icon/close.png"
+            size_hint: None, None
+            size: dp(100), dp(100)
+            font_size: dp(16)
+            on_state:
+                if self.state == "down": app.servo_open(); self.background_down:"icon/open.png"
+                else: app.servo_close(); self.background_down:"icon/close.png"
+    
+    # Phần điều khiển robot (giữ nguyên bố cục nút điều khiển)
+    ControlPanel:
+        id: control_panel
+        cols: 2
+        spacing: dp(300)
+        size_hint_y: 1
+        BoxLayout:
+            orientation: "vertical"
+            spacing: dp(10)
+            padding: [dp(10), dp(10), dp(10), dp(10)]
+            RoundedButton:
+                id: btn_forward
+                background_normal: "icon/forward.png"
+                background_down: "icon/forward_down.png"
+                on_press: root.ids.control_panel.on_forward_press(self)
+                on_release: root.ids.control_panel.on_forward_release(self)
+            RoundedButton:
+                id: btn_backward
+                background_normal: "icon/backward.png"
+                background_down: "icon/backward_down.png"
+                on_press: root.ids.control_panel.on_backward_press(self)
+                on_release: root.ids.control_panel.on_backward_release(self)
+        BoxLayout:
+            orientation: "horizontal"
+            spacing: dp(10)
+            padding: [dp(10), dp(10), dp(10), dp(25)]
+            RoundedButton:
+                id: btn_left
+                background_normal: "icon/left.png"
+                background_down: "icon/left_down.png"
+                on_press: root.ids.control_panel.on_left_press(self)
+                on_release: root.ids.control_panel.on_left_release(self)
+            RoundedButton:
+                id: btn_right
+                background_normal: "icon/right.png"
+                background_down: "icon/right_down.png"
+                on_press: root.ids.control_panel.on_right_press(self)
+                on_release: root.ids.control_panel.on_right_release(self)
+
+<ControlPanel>:
+    canvas:
+        Color:
+            rgba: 0, 0, 0, 0
+
+<RoundedButton@Button>:
+    background_normal: ''
+    background_down: ''
+    background_color: 0, 0.5, 0.8, 1
+    color: 1, 1, 1, 1
+    font_size: dp(20)
+    size_hint: None, None
+    height: dp(100)
+    width: dp(100)
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [dp(50)]
