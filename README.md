@@ -13,8 +13,8 @@ hoặc đơn giản hơn là:
 
 sau khi tải về các bạn có thể giải nén và truy cập thư mục vừa giải nén.
 # Hướng dẫn chi tiết cài đặt
-- Hướng dẫn cài đặt và setup EBOT với Arduino IDE: https://github.com/PXDAT/EBOT-setup-with-Arduino-IDE/blob/main/EBOT-setup-with-Arduino-IDE.md
-- Hướng dẫn cài đặt và setup EBOT với platformio: https://github.com/PXDAT/EBOT-setup-with-platformio/blob/main/EBOT-setup-with-platformio.md
+- Hướng dẫn cài đặt và setup EBOT với Arduino IDE: https://github.com/sam-espiol/EBOT-setup-with-Arduino-IDE/blob/main/EBOT-setup-with-Arduino-IDE.md
+- Hướng dẫn cài đặt và setup EBOT với platformio: https://github.com/sam-espiol/EBOT-setup-with-platformio/blob/main/EBOT-setup-with-platformio.md
 
 # Điều khiển thông qua Desktop: 
 *Đảm bảo rằng máy tính của các bạn đã cài đặt ngôn ngữ python.*
