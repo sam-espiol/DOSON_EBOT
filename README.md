@@ -40,6 +40,10 @@ python ESP32_Dekstop_Application.py
 ```
 # Điều khiển thông qua Mobile:
 ## Lưu ý trước khi thực hiện
+**Đây chỉ là hướng dẫn cho những bạn muốn tự tinh chỉnh phần mềm theo sở thích, ý muốn cá nhân còn ai không muốn có thể tải và sử dụng luôn phần mềm điều khiển Ebot*
+
+Link tải phần mềm: https://drive.google.com/drive/folders/1S_5SukDUP2q2geEFwnhd3IsIMWXxMDIf?usp=sharing
+
 **Để dễ dàng cài đặt hệ điều hành của bạn cần chạy windows 10/11 phiên bản pro hoặc linux với distro thuộc nhánh Debian(Ubuntu, Linux Mint, Lubuntu, v.v)*
 
 **Với các máy chạy hệ điều hành Windows cần cài đặt trước WSL2 (recommend) để dễ dàng giả lập hoặc có thể tải những phần mềm máy ảo như Virtual Box hoặc VMware Workstation Player hoặc VMware Workstation Pro để có thể dễ dàng hơn trong quá trình chỉnh sửa phần mềm. Tuy nhiên để cho đơn giản thì đây chỉ là hướng dẫn sử dụng với WSL2*
@@ -55,10 +59,6 @@ Link tải Ubuntu24-04 trên WSL2: https://documentation.ubuntu.com/wsl/en/lates
 Link hướng dẫn bật developer mode: https://www.youtube.com/watch?v=vYsLR1U_j5c
 
 Link hướng dẫn để chế độ File transfer: https://www.youtube.com/watch?v=yKGlRduZ_sk
-
-**Đây chỉ là hướng dẫn cho những bạn muốn tự tinh chỉnh phần mềm theo sở thích, ý muốn cá nhân còn ai không muốn có thể tải và sử dụng luôn phần mềm điều khiển Ebot*
-
-Link tải phần mềm: https://drive.google.com/drive/folders/1S_5SukDUP2q2geEFwnhd3IsIMWXxMDIf?usp=sharing
 
 ## Chi tiết cài đặt
 - Sau khi cài đặt xong WSL2 và Ubuntu ta vào mục Linux > Ubuntu-24.04 > home > ubuntu > paste file DOSON-EBOT-main.zip vừa tải về trong phân vùng này
